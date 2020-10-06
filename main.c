@@ -7,7 +7,7 @@ void insert();
 void display();
 void search();
 void delete();
-
+void update();
 
 struct covid
 {
@@ -22,7 +22,7 @@ void main()
     //system("color 1f");
     int choice;
     system("cls");
-    while (choice!=5)
+    while (choice!=6)
     {
         system("cls");
 
@@ -44,7 +44,10 @@ void main()
             case 4: system("cls");
                 delete();
                 break;
-            case 5: exit(1);
+            case 5: system("cls");
+                update();
+                break;
+            case 6: exit(1);
             default:
                  printf(" Invalid Option!!! Try again !!!\n");
         }
@@ -177,6 +180,112 @@ void delete()
     display();
 }
 
+void update()
+{
+    char st[25];
+    int found=0;
+    FILE *fp;
+    system("cls");
+    printf("\n\n Enter state to be updated : ");
+    scanf("%s",st);
+    fp = fopen("file.txt","rb+");
+    while((fread(&c,sizeof(c),1,fp))>0 && found==0)
+    {
+     if(strcmp(c.state,st)==0)
+            {
+                printf("\nSTATE\tCONFIRMED\tACTIVE\tRECOVERED\tDECEASED\tOTHERS\n\n");
+                printf("%s  \t%d  \t%d \t%d \t%d \t%d\n",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
 
+                printf("Enter new record : ");
+                printf("\nUpdated state name : ");
+                scanf("%s",c.state);
+                fflush(stdin);
+                printf("\nUpdated confirmed : ");
+                scanf("%d",&c.confirmed);
+                printf("\nUpdated active : ");
+                scanf("%d",&c.active);
+                printf("\nUpdated recovered : ");
+                scanf("%d",&c.recovered);
+                printf("\nUpdated deceased : ");
+                scanf("%d",&c.deceased);
+                printf("\nUpdated other : ");
+                scanf("%d",&c.other);
 
+                fseek(fp,-(long)sizeof(c),1);
+                fwrite(&c,sizeof(c),1,fp);
+                printf("\n\n\t Record Updated");
+                found=1;
+            }
+         }
+    fclose(fp);
+    if(found==0)
+    printf("\n\n Record Not Found ");
+}
+
+/*
+
+void update()
+{
+    char stat[25];
+    int flag=0;
+    FILE *fp;
+    fp = fopen("file.txt","rb+");
+    if(fp == NULL)
+        {
+            printf("State not added yet.!");
+            return;
+        }
+    else
+    {
+        system("cls");
+        printf("\n\n Enter state to be updated : ");
+        scanf("%s",stat);
+
+        printf("\n\n Previous record of this state : ");
+
+        while(fread(&c,sizeof(c),1,fp)>0 && flag==0)
+        {
+            if(strcmp(c.state,stat)==0)
+            {
+            //flag=1;
+                printf("\nSTATE\tCONFIRMED\tACTIVE\tRECOVERED\tDECEASED\tOTHERS\n\n");
+                printf("%s  \t%d  \t%d \t%d \t%d \t%d\n",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
+
+                printf("Enter new record : ");
+                printf("\nUpdated state name : ");
+                scanf("%s",c.state);
+                //fflush(stdin);
+                printf("\nUpdated confirmed : ");
+                scanf("%d",&c.confirmed);
+                printf("\nUpdated active : ");
+                scanf("%d",&c.active);
+                printf("\nUpdated recovered : ");
+                scanf("%d",&c.recovered);
+                printf("\nUpdated deceased : ");
+                scanf("%d",&c.deceased);
+                printf("\nUpdated other : ");
+                scanf("%d",&c.other);
+
+                fseek(fp,-sizeof(c),SEEK_CUR);
+                fwrite(&s,sizeof(c),1,fp);
+                flag=1;
+                break;
+            }
+            fflush(stdin);
+        }
+        if(flag==1)
+        {
+             printf("Updation Successfull!!");
+
+        }
+        else
+        {
+            printf(" \nData Not Found");
+        }
+        fclose(fp);
+	}
+
+}
+
+*/
 
