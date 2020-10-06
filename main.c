@@ -6,6 +6,8 @@
 void insert();
 void display();
 void search();
+void delete();
+
 
 struct covid
 {
@@ -20,7 +22,7 @@ void main()
     //system("color 1f");
     int choice;
     system("cls");
-    while (choice!=4)
+    while (choice!=5)
     {
         system("cls");
 
@@ -39,7 +41,10 @@ void main()
             case 3: system("cls");
                 search();
                 break;
-            case 4: exit(1);
+            case 4: system("cls");
+                delete();
+                break;
+            case 5: exit(1);
             default:
                  printf(" Invalid Option!!! Try again !!!\n");
         }
@@ -132,4 +137,46 @@ void search()
         }
         fclose(fp);
 }
+
+void delete()
+{
+    char st_name[25];
+    int flag=0;
+    FILE *fp,*ft;
+    fp = fopen("file.txt","rb");
+        if(fp == NULL)
+        {
+            printf("Cannot Open!");
+            return;
+        }
+    printf("\n\n***Previous Data***");
+    display();
+
+    printf("\n\n Enter state to be deleted : ");
+    scanf("%s",st_name);
+
+    ft= fopen("newfile.txt","ab+");
+     while(fread(&c,sizeof(c),1,fp)>0)
+        if(strcmp(st_name,c.state)!=0)
+        {
+           // printf("\n\nRecord Deleted Successfully!!!");
+            fwrite(&c,sizeof(c),1,ft);
+
+        }
+        else
+            flag=1;
+        if(flag==0)
+        {
+             printf("*No such state found*");
+        }
+    fclose(fp);
+    fclose(ft);
+    remove("file.txt");
+    rename("newfile.txt","file.txt");
+    printf("\n\n**Updated Data**");
+    display();
+}
+
+
+
 
