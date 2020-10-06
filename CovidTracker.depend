@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1602007244 source:c:\users\there\desktop\covidtracker\main.c
+	<stdio.h>
+	<conio.h>
+	<string.h>
+	<stdlib.h>
+	<windows.h>
+
