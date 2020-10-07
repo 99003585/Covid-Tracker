@@ -30,8 +30,12 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="inc" />
 		</Compiler>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/covidtracker.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
