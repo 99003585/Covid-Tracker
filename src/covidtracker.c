@@ -180,7 +180,7 @@ void update()
             gotoxy(10,9);
             printf("STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
             gotoxy(10,10);
-            printf("------------------------------------------------------------------------------------");
+            printf("----------------------------------------------------------------------------");
             gotoxy(10,12);
             printf("%-23s%-13d%-10d%-13d%-12d%-9d",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
 
