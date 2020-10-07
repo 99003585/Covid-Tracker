@@ -2,10 +2,8 @@
 
 
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
-#include<windows.h>
 
 
 struct covid
@@ -16,12 +14,10 @@ struct covid
 
 
 void main()
-{
-    system("color 1f");
-    gotoxy(15,8);
-    printf("<------ COVID TRACKER SYSTEM ------>");
+{  
+    //system("color 1f");
+    printf("\n\n\n\n\t\t\t<------ COVID TRACKER SYSTEM ------>");
     menu();
-
 }
 
 

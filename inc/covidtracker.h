@@ -3,12 +3,9 @@
 
 
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
-#include<windows.h>
 
-void gotoxy(int ,int );
 void insert();
 void display();
 void search();

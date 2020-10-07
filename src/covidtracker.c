@@ -1,10 +1,9 @@
 #include <covidtracker.h>
 
+
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
-#include<windows.h>
 
 
 struct covid
@@ -25,64 +24,53 @@ int valid_choice(choice)
 void menu()
 {
     int choice;
-    system("cls");
-    gotoxy(10,3);
-    printf("<----- MENU ----->");
-    gotoxy(10,6);
-    printf("1 : Insert Record.");
-    gotoxy(10,7);
-    printf("2 : Display Record.");
-    gotoxy(10,8);
-    printf("3 : Search Record.");
-    gotoxy(10,9);
-    printf("4 : Update Record.");
-    gotoxy(10,10);
-    printf("5 : Delete Record.");
-    gotoxy(10,11);
-    printf("6 : Exit.");
-    gotoxy(10,14);
-    printf("Enter your choice : ");
+    system("clear");
+    printf("\n\n\n\n\n\t\t\t<----- MENU ----->");
+    printf("\n\t\t\t\n\t\t\t1 : Insert Record.");
+    printf("\n\t\t\t2 : Display Record.");
+    printf("\n\t\t\t3 : Search Record.");
+    printf("\n\t\t\t4 : Update Record.");
+    printf("\n\t\t\t5 : Delete Record.");
+    printf("\n\t\t\t6 : Exit.");
+    printf("\n\t\t\t\n\t\t\tEnter your choice : ");
     scanf("%d",&choice);
 
     while(!valid_choice(choice))
     {
-        gotoxy(10,16);
-        printf(" Invalid Option!!! Try again !!!\n");
-        gotoxy(10,18);
-        printf("Enter valid choice  : ");
+        printf("\n\t\t\tInvalid Option!!! Try again !!!\n");
+        printf("\n\t\t\tEnter valid choice  : ");
         scanf("%d",&choice);
     }
 
 
     switch(choice)
     {
-    case 1:
+    case 1: 
         insert();
         break;
 
-    case 2:
+    case 2: 
         display();
         break;
 
-    case 3:
-        search();
+    case 3: 
+        search(); 
         break;
 
-    case 4:
-        update();
+    case 4: 
+        update(); 
         break;
 
-    case 5:
+    case 5: 
         delete();
         break;
-
-    case 6:
+    
+    case 6: 
         exit(1);
         break;
 
-    default:
-        gotoxy(10,17);
-        printf(" Invalid Option!!! Try again !!!\n");
+    default: 
+        printf("\n\t\t\t\n\t\t\tInvalid Option!!! Try again !!!\n\t\t\t");
     }
 }
 
@@ -92,52 +80,44 @@ void insert()
     FILE *fp;
     struct covid c;
     char another ='y';
-    system("cls");
+    char key;
+    system("clear");
 
     fp = fopen("file.txt","ab+");
     if(fp == NULL)
     {
-        gotoxy(10,5);
-        printf("Cannot Open!");
+        printf("\n\t\t\tCannot Open!");
         return;
     }
     fflush(stdin);
     while(another == 'y')
     {
-        gotoxy(10,3);
-        printf("<--:ENTER NEW RECORD:-->");
-        gotoxy(10,5);
-        printf("\nEnter state name : ");
+        printf("\n\n\n\n\n\n\t\t\t<--:ENTER NEW RECORD:-->");
+        printf("\n\t\t\t\n\t\t\tEnter state name : ");
         scanf("%s",c.state);
         fflush(stdin);
-        gotoxy(10,6);
-        printf("\nEnter confirmed  : ");
+        printf("\n\t\t\tEnter confirmed  : ");
         scanf("%d",&c.confirmed);
-        gotoxy(10,7);
-        printf("\nEnter active     : ");
+        printf("\n\t\t\tEnter active     : ");
         scanf("%d",&c.active);
-        gotoxy(10,8);
-        printf("\nEnter recovered  : ");
+        printf("\n\t\t\tEnter recovered  : ");
         scanf("%d",&c.recovered);
-        gotoxy(10,9);
-        printf("\nEnter deceased   : ");
+        printf("\n\t\t\tEnter deceased   : ");
         scanf("%d",&c.deceased);
-        gotoxy(10,10);
-        printf("\nEnter other      : ");
+        printf("\n\t\t\tEnter other      : ");
         scanf("%d",&c.other);
 
         fwrite(&c,sizeof(c),1,fp);
-        gotoxy(10,15);
-        printf("Want to add of another record? Then press 'y' else 'n'. ");
+        printf("\n\t\t\t\n\t\t\tWant to add of another record? Then press 'y' else 'n'. ");
         fflush(stdin);
-        another = getch();
-        system("cls");
+        scanf("%s",&another);
+        system("clear");
         fflush(stdin);
     }
     fclose(fp);
-    gotoxy(10,18);
-    printf("Press any key to continue.");
-    getch();
+    printf("\n\n\n\t\t\tPress Enter key to continue.");
+    getchar();
+    getchar();
     menu();
 }
 
@@ -146,33 +126,29 @@ void display()
 {
     FILE *fp;
     int i=1,j;
+    char key;
     struct covid c;
-    system("cls");
+    system("clear");
 
-    gotoxy(10,3);
-    printf("<--:VIEW RECORD:-->");
-    gotoxy(10,5);
-    printf("S.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
-    gotoxy(10,6);
-    printf("------------------------------------------------------------------------------------");
+    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
+    printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
+    printf("\n\t\t\t------------------------------------------------------------------------------------");
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            gotoxy(10,8);
-            printf("Cannot Open!");
+            printf("\n\t\t\tCannot Open!");
             return;
         }
-    j=8;
+    //j=8;
     while(fread(&c,sizeof(c),1,fp) == 1){
-        gotoxy(10,j);
-        printf("%-8d%-23s%-13d%-10d%-13d%-12d%-9d",i,c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
+        printf("\n\t\t\t%-8d%-23s%-13d%-10d%-13d%-12d%-9d",i,c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
         i++;
-        j++;
+       // j++;
     }
     fclose(fp);
-    gotoxy(10,j+3);
-    printf("Press any key to continue.");
-    getch();
+    printf("\n\t\t\t\n\t\t\t\n\t\t\tPress Enter key to continue.");
+    getchar();
+    getchar();
     menu();
 }
 
@@ -181,45 +157,37 @@ void search()
 {
     FILE *fp;
     struct covid c;
-    char st[25];;
-    system("cls");
+    char st[25];
+    char key;
+    system("clear");
 
-    gotoxy(10,3);
-    printf("<--:SEARCH RECORD:-->");
-    gotoxy(10,5);
-    printf("\n\n Enter state to be searched : ");
+    printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
+    printf("\n\t\t\t\n\t\t\t Enter state to be searched : ");
     fflush(stdin);
     scanf("%s",st);
 
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            gotoxy(10,6);
-            printf("Cannot Open!");
+            printf("\n\t\t\tCannot Open!");
             return;
         }
     while(fread(&c,sizeof(c),1,fp) == 1 )
     {
         if(strcmp(c.state,st)==0)
         {
-            gotoxy(10,8);
-            printf("State     : %s",c.state);
-            gotoxy(10,9);
-            printf("Confirmed : %d",c.confirmed);
-            gotoxy(10,10);
-            printf("Active    : %d",c.active);
-            gotoxy(10,11);
-            printf("Recovered : %d",c.recovered);
-            gotoxy(10,12);
-            printf("Deceased  : %d",c.deceased);
-            gotoxy(10,13);
-            printf("Others    : %d",c.other);
+            printf("\n\t\t\t\n\t\t\tState     : %s",c.state);
+            printf("\n\t\t\tConfirmed : %d",c.confirmed);
+            printf("\n\t\t\tActive    : %d",c.active);
+            printf("\n\t\t\tRecovered : %d",c.recovered);
+            printf("\n\t\t\tDeceased  : %d",c.deceased);
+            printf("\n\t\t\tOthers    : %d",c.other);
         }
     }
         fclose(fp);
-        gotoxy(10,16);
-        printf("Press any key to continue.");
-        getch();
+        printf("\n\n\n\t\t\tPress Enter key to continue.");
+        getchar();
+        getchar();
         menu();
 }
 
@@ -227,21 +195,19 @@ void search()
 void update()
 {
     char st[25];
+    char key;
     FILE *fp;
     struct covid c;
-    system("cls");
+    system("clear");
 
-    gotoxy(10,3);
-    printf("<--:MODIFY RECORD:-->");
-    gotoxy(10,5);
-    printf("\n\n Enter state to be updated : ");
+    printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
+    printf("\n\t\t\t\n\t\t\t Enter state to be updated : ");
     fflush(stdin);
     scanf("%s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        gotoxy(10,6);
-        printf("Cannot Open!");
+        printf("\n\t\t\tCannot Open!");
         return;
     }
     rewind(fp);
@@ -250,34 +216,24 @@ void update()
     {
         if(strcmp(c.state,st) == 0)
         {
-            gotoxy(10,9);
-            printf("STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
-            gotoxy(10,10);
-            printf("----------------------------------------------------------------------------");
-            gotoxy(10,12);
-            printf("%-23s%-13d%-10d%-13d%-12d%-9d",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
-
-            gotoxy(10,15);
-            printf("--- Enter latest updates ---");
-            gotoxy(10,16);
-            printf("\nEnter state name: ");
+            printf("\n\t\t\t\n\t\t\tSTATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
+            printf("\n\t\t\t------------------------------------------------------------------------------------");
+            printf("\n\t\t\t%-23s%-13d%-10d%-13d%-12d%-9d",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
+            
+            printf("\n\t\t\t\n\t\t\t--- Enter latest updates ---");
+            printf("\n\t\t\t\n\t\t\tEnter state name: ");
             scanf("%s",c.state);
             fflush(stdin);
-            gotoxy(10,17);
-            printf("\nEnter confirmed : ");
+            printf("\n\t\t\tEnter confirmed : ");
             scanf("%d",&c.confirmed);
-            gotoxy(10,18);
-            printf("\nEnter active    : ");
+            printf("\n\t\t\tEnter active    : ");
             scanf("%d",&c.active);
-            gotoxy(10,19);
-            printf("\nEnter recovered : ");
+            printf("\n\t\t\tEnter recovered : ");
             scanf("%d",&c.recovered);
-            gotoxy(10,20);
-            printf("\nEnter deceased  : ");
+            printf("\n\t\t\tEnter deceased  : ");
             fflush(stdin);
             scanf("%d",&c.deceased);
-            gotoxy(10,21);
-            printf("\nEnter other     : ");
+            printf("\n\t\t\tEnter other     : ");
             fflush(stdin);
             scanf("%d",&c.other);
 
@@ -287,9 +243,9 @@ void update()
         }
     }
     fclose(fp);
-    gotoxy(10,22);
-    printf("\nPress any key to continue.");
-    getch();
+    printf("\n\n\n\t\t\tPress Enter key to continue.");
+    getchar();
+    getchar();
     menu();
 }
 
@@ -297,27 +253,24 @@ void update()
 void delete()
 {
     char st[25];
+    char key;
     FILE *fp,*ft;
     struct covid c;
-    system("cls");
+    system("clear");
 
-    gotoxy(10,3);
-    printf("<--:DELETE RECORD:-->");
-    gotoxy(10,5);
-    printf("Enter the state name to be deleted : ");
+    printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
+    printf("\n\t\t\t\n\t\t\tEnter the state name to be deleted : ");
     fflush(stdin);
     scanf("%s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        gotoxy(10,6);
-        printf("Cannot Open!");
+        printf("\n\t\t\tCannot Open!");
         return;
     }
     ft = fopen("temp.txt","wb+");
     if(ft == NULL){
-        gotoxy(10,6);
-        printf("Cannot Open!");
+        printf("\n\t\t\tCannot Open!");
         return;
 
     }
@@ -330,17 +283,8 @@ void delete()
     fclose(ft);
     remove("file.txt");
     rename("temp.txt","file.txt");
-    gotoxy(10,10);
-    printf("Press any key to continue.");
-    getch();
+    printf("\n\n\n\t\t\tPress Enter key to continue.");
+    getchar();
+    getchar();
     menu();
-}
-
-
-void gotoxy(int x,int y)
-{
-        COORD c;
-        c.X=x;
-        c.Y=y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
 }
