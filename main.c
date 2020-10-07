@@ -1,5 +1,5 @@
 #include <covidtracker.h>
-#include <test_covidtracker.h>
+
 
 #include<stdio.h>
 #include<conio.h>
@@ -22,10 +22,6 @@ void main()
     printf("<------ COVID TRACKER SYSTEM ------>");
     menu();
 
-	/* Calling test main*/
-    
-    test_main();								/* Add function call */
-	return 0;
 }
 
 

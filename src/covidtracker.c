@@ -14,6 +14,14 @@ struct covid
 };
 
 
+int valid_choice(choice)
+{
+    if(choice == 1|| choice == 2|| choice == 3|| choice == 4|| choice == 5|| choice == 6)
+        return 1;
+    return 0;
+}
+
+
 void menu()
 {
     int choice;
@@ -33,8 +41,18 @@ void menu()
     gotoxy(10,11);
     printf("6 : Exit.");
     gotoxy(10,14);
-    printf("Enter your choice.");
+    printf("Enter your choice : ");
     scanf("%d",&choice);
+
+    while(!valid_choice(choice))
+    {
+        gotoxy(10,16);
+        printf(" Invalid Option!!! Try again !!!\n");
+        gotoxy(10,18);
+        printf("Enter valid choice  : ");
+        scanf("%d",&choice);
+    }
+
 
     switch(choice)
     {

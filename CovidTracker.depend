@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1602013189 source:c:\users\there\desktop\covidtracker\main.c
+1602056104 source:c:\users\there\desktop\covidtracker\main.c
 	<covidtracker.h>
 	<stdio.h>
 	<conio.h>
@@ -14,7 +14,7 @@
 	<stdlib.h>
 	<windows.h>
 
-1602013735 source:c:\users\there\desktop\covidtracker\src\covidtracker.c
+1602051628 source:c:\users\there\desktop\covidtracker\src\covidtracker.c
 	<covidtracker.h>
 	<stdio.h>
 	<conio.h>
