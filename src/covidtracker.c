@@ -94,7 +94,7 @@ void insert()
         printf("\n\n\n\n\n\n\t\t\t<--:ENTER NEW RECORD:-->");
         printf("\n\t\t\t\n\t\t\tEnter state name : ");
         scanf("%24s",c.state);
-        //fflush(stdin);
+        fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
         scanf("%d",&c.confirmed);
         printf("\n\t\t\tEnter active     : ");
@@ -270,7 +270,8 @@ void delete()
     ft = fopen("temp.txt","wb+");
     if(ft == NULL){
         printf("\n\t\t\tCannot Open!");
-        return;
+        exit(1);
+        //return;
 
     }
 
