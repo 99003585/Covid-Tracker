@@ -164,7 +164,7 @@ void search()
     printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be searched : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
@@ -222,7 +222,7 @@ void update()
             
             printf("\n\t\t\t\n\t\t\t--- Enter latest updates ---");
             printf("\n\t\t\t\n\t\t\tEnter state name: ");
-            scanf("%s",c.state);
+            scanf("%24s",c.state);
             fflush(stdin);
             printf("\n\t\t\tEnter confirmed : ");
             scanf("%d",&c.confirmed);
