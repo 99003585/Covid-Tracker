@@ -94,7 +94,7 @@ void insert()
     {
         printf("\n\n\n\n\n\n\t\t\t<--:ENTER NEW RECORD:-->");
         printf("\n\t\t\t\n\t\t\tEnter state name : ");
-        scanf("%s",c.state);
+        scanf("%24s",c.state);
         fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
         scanf("%d",&c.confirmed);
