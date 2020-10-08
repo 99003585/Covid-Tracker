@@ -1,24 +1,18 @@
 # depslib dependency file v1.0
-1602056104 source:c:\users\there\desktop\covidtracker\main.c
+1602134181 source:c:\users\there\desktop\covidtracker\main.c
 	<covidtracker.h>
 	<stdio.h>
-	<conio.h>
 	<string.h>
 	<stdlib.h>
-	<windows.h>
 
-1602012320 c:\users\there\desktop\covidtracker\inc\covidtracker.h
+1602097420 c:\users\there\desktop\covidtracker\inc\covidtracker.h
 	<stdio.h>
-	<conio.h>
 	<string.h>
 	<stdlib.h>
-	<windows.h>
 
-1602058078 source:c:\users\there\desktop\covidtracker\src\covidtracker.c
+1602097366 source:c:\users\there\desktop\covidtracker\src\covidtracker.c
 	<covidtracker.h>
 	<stdio.h>
-	<conio.h>
 	<string.h>
 	<stdlib.h>
-	<windows.h>
 

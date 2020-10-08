@@ -14,8 +14,7 @@ struct covid
 
 
 void main()
-{  
-    //system("color 1f");
+{
     printf("\n\n\n\n\t\t\t<------ COVID TRACKER SYSTEM ------>");
     menu();
 }
