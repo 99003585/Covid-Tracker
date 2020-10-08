@@ -43,7 +43,7 @@ void test_menu(void) {
   CU_ASSERT(1 == valid_choice(5));
 
   /* Dummy fail*/
-  CU_ASSERT(1 == valid_choice(8));
+  CU_ASSERT(0 == valid_choice(8));
 }
 
 
