@@ -57,4 +57,4 @@ dkms.conf
 *.depend
 *.cbp
 *.obj/
-*.bin/
+#*.bin/
