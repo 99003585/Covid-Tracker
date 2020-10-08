@@ -6,7 +6,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-void insert();
+int insert();
 void display();
 void search();
 void update();
