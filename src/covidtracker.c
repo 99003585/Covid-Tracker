@@ -79,7 +79,7 @@ void insert()
 {
     FILE *fp;
     struct covid c;
-    char another;
+    char another = 'y';
     char key;
     system("clear");
 
@@ -203,7 +203,7 @@ void update()
     printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be updated : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
