@@ -261,7 +261,7 @@ void delete()
     printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
     printf("\n\t\t\t\n\t\t\tEnter the state name to be deleted : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
