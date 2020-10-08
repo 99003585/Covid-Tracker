@@ -79,7 +79,7 @@ void insert()
 {
     FILE *fp;
     struct covid c;
-    char another[5];
+    char another;
     char key;
     system("clear");
 
@@ -110,7 +110,7 @@ void insert()
         fwrite(&c,sizeof(c),1,fp);
         printf("\n\t\t\t\n\t\t\tWant to add of another record? Then press 'y' else 'n'. ");
         fflush(stdin);
-        scanf("%s",&another);
+        scanf("%3s",&another);
         system("clear");
         fflush(stdin);
     }
