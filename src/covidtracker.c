@@ -79,7 +79,7 @@ void insert()
 {
     FILE *fp;
     struct covid c;
-    char another ='y';
+    char another[5];
     char key;
     system("clear");
 
