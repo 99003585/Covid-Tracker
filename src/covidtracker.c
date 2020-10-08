@@ -89,7 +89,6 @@ void insert()
         printf("\n\t\t\tCannot Open!");
         return;
     }
-    fflush(stdin);
     while(another == 'y')
     {
         printf("\n\n\n\n\n\n\t\t\t<--:ENTER NEW RECORD:-->");
@@ -271,6 +270,7 @@ void delete()
     ft = fopen("temp.txt","wb+");
     if(ft == NULL){
         printf("\n\t\t\tCannot Open!");
+        fclose(ft);
         return;
 
     }
