@@ -4,5 +4,6 @@
 # ![Valgrind](https://github.com/stepin104890/Covid-Tracker/workflows/Valgrind/badge.svg)
 # ![C/C++ CI](https://github.com/stepin104890/Covid-Tracker/workflows/C/C++%20CI/badge.svg)
 # ![Unit testing](https://github.com/stepin104890/Covid-Tracker/workflows/Unit%20testing/badge.svg)
+# ![cppcheck-action](https://github.com/stepin104890/Covid-Tracker/workflows/cppcheck-action/badge.svg)
 
 
