@@ -265,6 +265,7 @@ void delete()
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
         printf("\n\t\t\tCannot Open!");
+        fclose(fp);
         return;
     }
     ft = fopen("temp.txt","wb+");
