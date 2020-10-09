@@ -21,6 +21,14 @@ int valid_choice(choice)
 }
 
 
+int cases_count(struct covid c)
+{
+    if(!isdigit(c.confirmed))
+        return 0;
+    return 1;
+}
+
+
 void menu()
 {
     int choice;
@@ -97,6 +105,14 @@ void insert()
         fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
         scanf("%d",&c.confirmed);
+        
+        while(!cases_count(c))
+        {
+            printf("\n\t\t\tNot a valid input !!! Try again !!!\n");
+            printf("\n\t\t\tEnter a valid Number  : ");
+            scanf("%d",&c.confirmed);
+        }
+        
         printf("\n\t\t\tEnter active     : ");
         scanf("%d",&c.active);
         printf("\n\t\t\tEnter recovered  : ");
