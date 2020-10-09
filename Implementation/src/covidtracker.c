@@ -193,7 +193,7 @@ int search()
 }
 
 
-void update()
+int update()
 {
     char st[25];
     char key;
@@ -209,7 +209,7 @@ void update()
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
         printf("\n\t\t\tCannot Open!");
-        return;
+        return 1;
     }
     rewind(fp);
     fflush(stdin);
@@ -248,10 +248,11 @@ void update()
     getchar();
     getchar();
     menu();
+    return 1;
 }
 
 
-void delete()
+int delete()
 {
     char st[25];
     char key;
@@ -267,7 +268,7 @@ void delete()
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
         printf("\n\t\t\tCannot Open!");
-        return;
+        return 1;
     }
     ft = fopen("temp.txt","wb+");
     if(ft == NULL){
@@ -289,4 +290,5 @@ void delete()
     getchar();
     getchar();
     menu();
+    return 1;
 }
