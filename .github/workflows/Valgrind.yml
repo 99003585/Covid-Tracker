@@ -20,4 +20,4 @@ jobs:
     - name: make test
       run: |
         make test
-        valgrind ./build/Test_covidtracker.out
+        valgrind ./Implementation/build/Test_covidtracker.out
