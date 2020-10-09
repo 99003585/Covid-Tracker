@@ -135,7 +135,7 @@ int display()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            printf("\n\t\t\tCannot Open!");
+            printf("\n\t\t\tCannot Open!\n");
             return 1;
         }
     //j=8;
@@ -153,7 +153,7 @@ int display()
 }
 
 
-void search()
+int search()
 {
     FILE *fp;
     struct covid c;
@@ -169,8 +169,8 @@ void search()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            printf("\n\t\t\tCannot Open!");
-            return;
+            printf("\n\t\t\tCannot Open!\n");
+            return 1;
         }
     while(fread(&c,sizeof(c),1,fp) == 1 )
     {
@@ -189,6 +189,7 @@ void search()
         getchar();
         getchar();
         menu();
+        return 1;
 }
 
 
