@@ -9,8 +9,7 @@
 struct covid
 {
     char state[25];
-    char confirmed[20];
-    int active,recovered,deceased,other;
+    int confirmed,active,recovered,deceased,other;
 };
 
 
