@@ -136,7 +136,7 @@ int display()
         if(fp == NULL)
         {
             printf("\n\t\t\tCannot Open!");
-            return;
+            return 1;
         }
     //j=8;
     while(fread(&c,sizeof(c),1,fp) == 1){
@@ -149,7 +149,7 @@ int display()
     getchar();
     getchar();
     menu();
-    return 1;
+    //return 1;
 }
 
 
