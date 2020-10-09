@@ -42,16 +42,12 @@ int main() {
 void test_menu(void) {
   CU_ASSERT(1 == valid_choice(2));
   CU_ASSERT(0 == valid_choice(8));
-
-  /* Dummy fail*/
-  CU_ASSERT(0 == valid_choice(3));
 }
 
 void test_insert(void) {
   CU_ASSERT(1 == insert());
 
   /* Dummy fail*/
-  CU_ASSERT(0 == insert());
 }
 
 
