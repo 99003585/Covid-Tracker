@@ -14,7 +14,7 @@
 
 
 /**
-* Validate the input given by user.
+* Validate the options given by user.
 * @param[in] choice.
 * @return valid or invalid choice.
 * @note checks wheather the choice given by user is valid or not.
@@ -23,9 +23,17 @@ int valid_choice(choice);
 
 
 /**
+* Validate the no. of cases given by user.
+* @param[in] choice.
+* @return valid or invalid count.
+* @note checks wheather the count given by user is valid or not.
+*/
+int cases_count(struct covid c);
+
+
+/**
 * The user inputs the information such as the state name, active, recovered, deceased & other cases.Other cases include the migrated cases or non-COVID deaths.
 */
-//void insert();
 void insert();
 
 /**
