@@ -75,7 +75,7 @@ void menu()
 }
 
 
-int insert()
+void insert()
 {
     FILE *fp;
     struct covid c;
@@ -118,7 +118,6 @@ int insert()
     getchar();
     getchar();
     menu();
-    return 1;
 }
 
 
