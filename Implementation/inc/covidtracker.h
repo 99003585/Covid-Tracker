@@ -42,13 +42,13 @@ int search();
 /**
 * This function is used to modify the existing records with latest updates of number of cases.
 */
-void update();
+int update();
 
 
 /**
 * This function is used to delete the existing record by entering the name of state.
 */
-void delete();
+int delete();
 
 
 #endif // COVIDTRACKER_H_INCLUDED
