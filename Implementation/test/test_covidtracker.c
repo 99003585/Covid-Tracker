@@ -5,7 +5,7 @@
 #define PROJECT_NAME    "covidtracker"
 
 void test_menu(void);
-void test_insert(void);
+void test_display(void);
 
 /* Start of the application test */
 int main() {
@@ -20,7 +20,7 @@ int main() {
 /* Add your test functions*/
   
   CU_add_test(suite, "menu", test_menu);
-  CU_add_test(suite, "insert", test_insert);
+  CU_add_test(suite, "display", test_display);
 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
@@ -45,8 +45,8 @@ void test_menu(void) {
   CU_ASSERT(0 == valid_choice(9));
 }
 
-void test_insert(void) {
-  CU_ASSERT(1 == insert());
+void test_display(void) {
+  CU_ASSERT(1 == display());
 
   //CU_ASSERT(0 == valid_choice(9));
 }
