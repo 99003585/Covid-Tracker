@@ -22,6 +22,9 @@
 int valid_choice(choice);
 
 
+int cases_count(struct covid c);
+
+
 /**
 * The user inputs the information such as the state name, active, recovered, deceased & other cases.Other cases include the migrated cases or non-COVID deaths.
 */
