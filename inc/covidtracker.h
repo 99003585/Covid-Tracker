@@ -6,7 +6,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-int valid_choice(choice)
+int valid_choice(choice);
 void insert();
 void display();
 void search();
