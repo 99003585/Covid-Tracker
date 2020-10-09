@@ -104,13 +104,13 @@ void insert()
         scanf("%24s",c.state);
         fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
-        scanf("%d",&c.confirmed);
+        scanf("%s",&c.confirmed);
         
         while(!cases_count(c))
         {
             printf("\n\t\t\tNot a valid input !!! Try again !!!\n");
             printf("\n\t\t\tEnter a valid Number  : ");
-            scanf("%d",&c.confirmed);
+            scanf("%s",&c.confirmed);
         }
         
         printf("\n\t\t\tEnter active     : ");
