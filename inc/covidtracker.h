@@ -1,6 +1,6 @@
 /**
 * @file covidtracker.h
-
+* Tracks the latest covid-19 updates from different states of India.
 */
 
 
@@ -14,7 +14,7 @@
 
 
 /**
-* Tracks the latest covid-19 updates from different states of India.
+* Validate the input given by user.
 * @param[in] choice.
 * @return valid or invalid choice.
 * @note checks wheather the choice given by user is valid or not.
@@ -23,8 +23,7 @@ int valid_choice(choice);
 
 
 /**
-* The user inputs the information such as the state name, active, recovered, deceased & other cases. 
-* @note Other cases include the migrated cases or non-COVID deaths.
+* The user inputs the information such as the state name, active, recovered, deceased & other cases.Other cases include the migrated cases or non-COVID deaths.
 */
 void insert();
 
