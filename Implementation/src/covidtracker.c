@@ -149,7 +149,7 @@ int display()
     getchar();
     getchar();
     menu();
-    //return 1;
+    return 1;
 }
 
 
