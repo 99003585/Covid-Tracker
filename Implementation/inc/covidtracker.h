@@ -36,7 +36,7 @@ int display();
 /**
 * State name is given as input to retrieve records of the respective state.
 */
-void search();
+int search();
 
 
 /**
