@@ -25,8 +25,8 @@ int valid_choice(choice);
 /**
 * The user inputs the information such as the state name, active, recovered, deceased & other cases.Other cases include the migrated cases or non-COVID deaths.
 */
-void insert();
-
+//void insert();
+int insert();
 
 /**
 * All existing records are displayed along with state name, active, recovered, deceased & other cases. 
