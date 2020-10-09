@@ -7,6 +7,8 @@
 void test_menu(void);
 void test_display(void);
 void test_search(void);
+void test_update(void);
+void test_delete(void);
 
 /* Start of the application test */
 int main() {
@@ -23,6 +25,8 @@ int main() {
   CU_add_test(suite, "menu", test_menu);
   CU_add_test(suite, "display", test_display);
   CU_add_test(suite, "search", test_search);
+  CU_add_test(suite, "update", test_update);
+  CU_add_test(suite, "delete", test_delete);
 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
@@ -64,3 +68,18 @@ void test_search(void) {
   /* Dummy fail*/
   //CU_ASSERT(0 == display());
 }
+
+void test_update(void) {
+  CU_ASSERT(1 == display());
+  
+  /* Dummy fail*/
+  //CU_ASSERT(0 == display());
+}
+
+void test_delete(void) {
+  CU_ASSERT(1 == display());
+  
+  /* Dummy fail*/
+  //CU_ASSERT(0 == display());
+}
+
