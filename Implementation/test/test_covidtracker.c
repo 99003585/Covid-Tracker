@@ -6,6 +6,7 @@
 
 void test_menu(void);
 void test_display(void);
+void test_casescount(void);
 
 /* Start of the application test */
 int main() {
@@ -21,6 +22,7 @@ int main() {
   
   CU_add_test(suite, "menu", test_menu);
   CU_add_test(suite, "display", test_display);
+  CU_add_test(suite, "casescount", test_casescount);
 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
@@ -56,6 +58,14 @@ void test_display(void) {
   //CU_ASSERT(0 == display());
 }
 
-
+void test_casescount(void) {
+  CU_ASSERT(1 == cases_count(5000));
+  CU_ASSERT(1 == cases_count(40));
+  CU_ASSERT(0 == cases_count(a));
+  CU_ASSERT(0 == cases_count(ab));
+  
+  /* Dummy fail*/
+  //CU_ASSERT(0 == display());
+}
 
 
