@@ -19,7 +19,7 @@ int main() {
 /* Add your test functions*/
   
   CU_add_test(suite, "menu", test_menu);
-
+  
 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
@@ -38,12 +38,12 @@ int main() {
 /* Write all the test functions */
 
 void test_menu(void) {
-  CU_ASSERT(1 == valid_choice(1));
   CU_ASSERT(1 == valid_choice(2));
   CU_ASSERT(1 == valid_choice(5));
-
-  /* Dummy fail*/
-  CU_ASSERT(1 == valid_choice(8));
+  CU_ASSERT(0 == valid_choice(8));
+  CU_ASSERT(0 == valid_choice(9));
 }
+
+
 
 

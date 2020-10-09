@@ -79,7 +79,7 @@ void insert()
 {
     FILE *fp;
     struct covid c;
-    char another ='y';
+    char another = 'y';
     char key;
     system("clear");
 
@@ -89,12 +89,11 @@ void insert()
         printf("\n\t\t\tCannot Open!");
         return;
     }
-    fflush(stdin);
     while(another == 'y')
     {
         printf("\n\n\n\n\n\n\t\t\t<--:ENTER NEW RECORD:-->");
         printf("\n\t\t\t\n\t\t\tEnter state name : ");
-        scanf("%s",c.state);
+        scanf("%24s",c.state);
         fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
         scanf("%d",&c.confirmed);
@@ -110,7 +109,7 @@ void insert()
         fwrite(&c,sizeof(c),1,fp);
         printf("\n\t\t\t\n\t\t\tWant to add of another record? Then press 'y' else 'n'. ");
         fflush(stdin);
-        scanf("%s",&another);
+        scanf("%3s",&another);
         system("clear");
         fflush(stdin);
     }
@@ -164,7 +163,7 @@ void search()
     printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be searched : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
@@ -203,7 +202,7 @@ void update()
     printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be updated : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
@@ -222,7 +221,7 @@ void update()
             
             printf("\n\t\t\t\n\t\t\t--- Enter latest updates ---");
             printf("\n\t\t\t\n\t\t\tEnter state name: ");
-            scanf("%s",c.state);
+            scanf("%24s",c.state);
             fflush(stdin);
             printf("\n\t\t\tEnter confirmed : ");
             scanf("%d",&c.confirmed);
@@ -261,7 +260,7 @@ void delete()
     printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
     printf("\n\t\t\t\n\t\t\tEnter the state name to be deleted : ");
     fflush(stdin);
-    scanf("%s",st);
+    scanf("%24s",st);
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
@@ -271,7 +270,8 @@ void delete()
     ft = fopen("temp.txt","wb+");
     if(ft == NULL){
         printf("\n\t\t\tCannot Open!");
-        return;
+        exit(1);
+        //return;
 
     }
 
