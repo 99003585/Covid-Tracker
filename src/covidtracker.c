@@ -13,7 +13,7 @@ struct covid
 };
 
 
-int valid_choice(int choice)
+int valid_choice(choice)
 {
     if(choice == 1|| choice == 2|| choice == 3|| choice == 4|| choice == 5|| choice == 6)
         return 1;
