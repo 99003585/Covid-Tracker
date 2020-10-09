@@ -6,7 +6,8 @@
 #include<string.h>
 #include<stdlib.h>
 
-int insert();
+int valid_choice(int choice)
+void insert();
 void display();
 void search();
 void update();
