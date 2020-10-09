@@ -16,19 +16,10 @@
 /**
 * Validate the options given by user.
 * @param[in] choice.
-* @return valid or invalid choice.
+* @return 1 if valid and 0 if invalid choice.
 * @note checks wheather the choice given by user is valid or not.
 */
 int valid_choice(choice);
-
-
-/**
-* Validate the no. of cases given by user.
-* @param[in] choice.
-* @return valid or invalid count.
-* @note checks wheather the count given by user is valid or not.
-*/
-int cases_count(struct covid c);
 
 
 /**
