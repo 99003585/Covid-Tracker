@@ -58,11 +58,16 @@ void test_display(void) {
   //CU_ASSERT(0 == display());
 }
 
+struct covid a={.confirmed="5000"};
+struct covid b={.confirmed="123"};
+struct covid c={.confirmed="0"};
+struct covid d={.confirmed="abc"};
+
 void test_casescount(void) {
-  CU_ASSERT(1 == cases_count(5000));
-  CU_ASSERT(1 == cases_count(40));
-  CU_ASSERT(0 == cases_count(a));
-  CU_ASSERT(0 == cases_count(ab));
+  CU_ASSERT(1 == cases_count(a));
+  CU_ASSERT(1 == cases_count(b));
+  CU_ASSERT(1 == cases_count(c));
+  CU_ASSERT(0 == cases_count(d));
   
   /* Dummy fail*/
   //CU_ASSERT(0 == display());
