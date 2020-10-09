@@ -9,8 +9,7 @@
 struct covid
 {
     char state[25];
-    char confirmed[20];
-    int active,recovered,deceased,other;
+    int confirmed,active,recovered,deceased,other;
 };
 
 
@@ -19,14 +18,6 @@ int valid_choice(choice)
     if(choice == 1|| choice == 2|| choice == 3|| choice == 4|| choice == 5|| choice == 6)
         return 1;
     return 0;
-}
-
-
-int cases_count(struct covid c)
-{
-    if(!isdigit(c.confirmed))
-        return 0;
-    return 1;
 }
 
 
@@ -105,15 +96,7 @@ void insert()
         scanf("%24s",c.state);
         fflush(stdin);
         printf("\n\t\t\tEnter confirmed  : ");
-        scanf("%s",&c.confirmed);
-        
-        while(!cases_count(c))
-        {
-            printf("\n\t\t\tNot a valid input !!! Try again !!!\n");
-            printf("\n\t\t\tEnter a valid Number  : ");
-            scanf("%s",&c.confirmed);
-        }
-        
+        scanf("%d",&c.confirmed);
         printf("\n\t\t\tEnter active     : ");
         scanf("%d",&c.active);
         printf("\n\t\t\tEnter recovered  : ");
@@ -157,7 +140,7 @@ int display()
         }
     //j=8;
     while(fread(&c,sizeof(c),1,fp) == 1){
-        printf("\n\t\t\t%-8d%-23s%-13s%-10d%-13d%-12d%-9d",i,c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
+        printf("\n\t\t\t%-8d%-23s%-13d%-10d%-13d%-12d%-9d",i,c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
         i++;
        // j++;
     }
@@ -194,7 +177,7 @@ void search()
         if(strcmp(c.state,st)==0)
         {
             printf("\n\t\t\t\n\t\t\tState     : %s",c.state);
-            printf("\n\t\t\tConfirmed : %s",c.confirmed);
+            printf("\n\t\t\tConfirmed : %d",c.confirmed);
             printf("\n\t\t\tActive    : %d",c.active);
             printf("\n\t\t\tRecovered : %d",c.recovered);
             printf("\n\t\t\tDeceased  : %d",c.deceased);
@@ -235,14 +218,14 @@ void update()
         {
             printf("\n\t\t\t\n\t\t\tSTATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
             printf("\n\t\t\t------------------------------------------------------------------------------------");
-            printf("\n\t\t\t%-23s%-13s%-10d%-13d%-12d%-9d",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
+            printf("\n\t\t\t%-23s%-13d%-10d%-13d%-12d%-9d",c.state,c.confirmed,c.active,c.recovered,c.deceased,c.other);
             
             printf("\n\t\t\t\n\t\t\t--- Enter latest updates ---");
             printf("\n\t\t\t\n\t\t\tEnter state name: ");
             scanf("%24s",c.state);
             fflush(stdin);
             printf("\n\t\t\tEnter confirmed : ");
-            scanf("%s",&c.confirmed);
+            scanf("%d",&c.confirmed);
             printf("\n\t\t\tEnter active    : ");
             scanf("%d",&c.active);
             printf("\n\t\t\tEnter recovered : ");
