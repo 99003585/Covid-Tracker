@@ -45,15 +45,15 @@ void test_menu(void) {
   CU_ASSERT(0 == valid_choice(9));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == valid_choice(7));
-  CU_ASSERT(0 == valid_choice(3));
+  //CU_ASSERT(1 == valid_choice(7));
+  //CU_ASSERT(0 == valid_choice(3));
 }
 
 void test_display(void) {
   CU_ASSERT(1 == display());
   
   /* Dummy fail*/
-  CU_ASSERT(0 == display());
+  //CU_ASSERT(0 == display());
 }
 
 
