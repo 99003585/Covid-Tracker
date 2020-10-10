@@ -11,7 +11,7 @@
 * Operating System: Any operating system (preferably linux,windows)
 * Language: C
 * IDE: Visual Studio Code/Codeblocks
-* Compiler: GCC/MINGW Compiler
+* Compiler: GCC Compiler
 
 ## Functional Requirements :
 
