@@ -4,3 +4,5 @@
  ![C/C++ CI](https://github.com/stepin104890/Covid-Tracker/workflows/C/C++%20CI/badge.svg)  
  ![Unit testing](https://github.com/stepin104890/Covid-Tracker/workflows/Unit%20testing/badge.svg)  
  ![cppcheck-action](https://github.com/stepin104890/Covid-Tracker/workflows/cppcheck-action/badge.svg)  
+The COVID-19 pandemic in India is part of the worldwide pandemic of coronavirus disease 2019. The number of new cases is increasing day by day around the world. India currently has the second-highest number of confirmed cases in the world and holds single day record for largest increase in cases. Therefore, it is important to track the spread of pandemic in the country. The participants can use this Tracker system to get the latest covid updates from different states of India.
+
