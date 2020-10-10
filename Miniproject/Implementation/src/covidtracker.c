@@ -129,15 +129,14 @@ int display()
     struct covid c;
     system("clear");
 
-    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
-    //printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
-    //printf("\n\t\t\t------------------------------------------------------------------------------------");
+
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
             printf("\n\t\t\tNo Records Exists!\n");
             return 1;
         }
+    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
     printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
     printf("\n\t\t\t------------------------------------------------------------------------------------");
     while(fread(&c,sizeof(c),1,fp) == 1){
