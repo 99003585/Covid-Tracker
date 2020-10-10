@@ -35,12 +35,12 @@ void menu()
     printf("\n\t\t\t\n\t\t\tEnter your choice : ");
     scanf("%d",&choice);
 
-    while(!valid_choice(choice))
+   /* while(!valid_choice(choice))
     {
         printf("\n\t\t\tInvalid Option!!! Try again !!!\n");
         printf("\n\t\t\tEnter valid choice  : ");
         scanf("%d",&choice);
-    }
+    }*/
 
 
     switch(choice)
