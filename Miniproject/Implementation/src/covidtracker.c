@@ -133,7 +133,7 @@ int display()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            //printf(".");
+            printf(".");
             //printf("\n\t\t\tNo Records Exists!...");
             return 1;
         }
