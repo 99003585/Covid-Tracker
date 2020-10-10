@@ -129,7 +129,7 @@ int display()
     struct covid c;
     system("clear");
 
-    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
+    //printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
     //printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
     //printf("\n\t\t\t------------------------------------------------------------------------------------");
     fp = fopen("file.txt","rb+");
@@ -138,6 +138,7 @@ int display()
             printf("\n\t\t\tNo Records Exists!\n");
             return 1;
         }
+    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
     printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
     printf("\n\t\t\t------------------------------------------------------------------------------------");
     while(fread(&c,sizeof(c),1,fp) == 1){
@@ -162,10 +163,10 @@ int search()
     char key;
     system("clear");
 
-    printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
+   /* printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be searched : ");
     fflush(stdin);
-    scanf("%24s",st);
+    scanf("%24s",st);*/
 
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
@@ -173,6 +174,10 @@ int search()
             printf("\n\t\t\tNo Records Exists!\n");
             return 1;
         }
+    printf("\n\n\n\n\n\n\t\t\t<--:SEARCH RECORD:-->");
+    printf("\n\t\t\t\n\t\t\t Enter state to be searched : ");
+    fflush(stdin);
+    scanf("%24s",st);
     while(fread(&c,sizeof(c),1,fp) == 1 )
     {
         if(strcmp(c.state,st)==0)
@@ -202,16 +207,20 @@ int update()
     struct covid c;
     system("clear");
 
-    printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
+   /* printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
     printf("\n\t\t\t\n\t\t\t Enter state to be updated : ");
     fflush(stdin);
-    scanf("%24s",st);
+    scanf("%24s",st);*/
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
         printf("\n\t\t\tNo Records Exists!");
         return 1;
     }
+    printf("\n\n\n\n\n\n\t\t\t<--:MODIFY RECORD:-->");
+    printf("\n\t\t\t\n\t\t\t Enter state to be updated : ");
+    fflush(stdin);
+    scanf("%24s",st);
     rewind(fp);
     fflush(stdin);
     while(fread(&c,sizeof(c),1,fp) == 1)
@@ -261,10 +270,10 @@ int delete()
     struct covid c;
     system("clear");
 
-    printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
+   /* printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
     printf("\n\t\t\t\n\t\t\tEnter the state name to be deleted : ");
     fflush(stdin);
-    scanf("%24s",st);
+    scanf("%24s",st);*/
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
@@ -279,6 +288,11 @@ int delete()
 
     }
 
+    printf("\n\n\n\n\n\n\t\t\t<--:DELETE RECORD:-->");
+    printf("\n\t\t\t\n\t\t\tEnter the state name to be deleted : ");
+    fflush(stdin);
+    scanf("%24s",st);
+    
     while(fread(&c,sizeof(c),1,fp) == 1){
         if(strcmp(c.state,st)!=0)
             fwrite(&c,sizeof(c),1,ft);
