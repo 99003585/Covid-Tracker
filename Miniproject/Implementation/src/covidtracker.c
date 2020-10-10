@@ -133,9 +133,9 @@ int display()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
+              printf("");
+            //printf("\n\t\t\tNo Records Exists!...");
             return 1;
-            printf("\n\t\t\tNo Records Exists!...");
-            //return 1;
         }
     printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
     printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
