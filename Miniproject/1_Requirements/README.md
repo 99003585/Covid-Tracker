@@ -1,19 +1,19 @@
 # REQUIREMENTS
 
-## Hardware Requirements :
+## Hardware Requirements
 
 *  System: CPU - 2.0 GHZ 
 *  RAM: 1 GB
 *  Hard Disk: 40 GB
 
-## Software Requirements :
+## Software Requirements
 
 *  Operating System: Any operating system (preferably linux,windows)
 *  Language: C
 *  IDE: Visual Studio Code/Codeblocks
 *  Compiler: GCC Compiler
 
-## Functional Requirements :
+## Functional Requirements
 
 *  Add new record: The user inputs the information such as the state name, active, recovered, deceased & other cases. Other cases include the migrated cases or non-COVID deaths.
 *  Display record: All existing records are displayed along with state name, active, recovered, deceased & other cases.
