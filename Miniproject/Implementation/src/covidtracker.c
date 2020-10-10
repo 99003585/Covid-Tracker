@@ -129,15 +129,15 @@ int display()
     struct covid c;
     system("clear");
 
-
+    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
+    //printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
+    //printf("\n\t\t\t------------------------------------------------------------------------------------");
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            //printf(".");
-            printf("\n\t\t\tNo Records Exists!...");
+            printf("\n\t\t\tNo Records Exists!\n");
             return 1;
         }
-    printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
     printf("\n\t\t\t\n\t\t\tS.No    STATE NAME            CONFIRMED    ACTIVE    RECOVERED    DECEASED    OTHERS");
     printf("\n\t\t\t------------------------------------------------------------------------------------");
     while(fread(&c,sizeof(c),1,fp) == 1){
@@ -170,7 +170,7 @@ int search()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            printf("\n\t\t\tNo Records Exists!...");
+            printf("\n\t\t\tNo Records Exists!\n");
             return 1;
         }
     while(fread(&c,sizeof(c),1,fp) == 1 )
@@ -209,7 +209,7 @@ int update()
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        printf("\n\t\t\tNo Records Exists!...");
+        printf("\n\t\t\tNo Records Exists!");
         return 1;
     }
     rewind(fp);
@@ -268,7 +268,7 @@ int delete()
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        printf("\n\t\t\tNo Records Exists!...");
+        printf("\n\t\t\tNo Records Exists!");
         return 1;
     }
     ft = fopen("temp.txt","wb+");
