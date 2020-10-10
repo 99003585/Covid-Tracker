@@ -133,7 +133,7 @@ int display()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            printf("\n\t\t\tNo Records Exists!\n");
+            printf("\n\t\t\tNo Records Exists!...");
             return 1;
         }
     printf("\n\n\n\n\n\n\t\t\t<--:VIEW RECORD:-->");
@@ -169,7 +169,7 @@ int search()
     fp = fopen("file.txt","rb+");
         if(fp == NULL)
         {
-            printf("\n\t\t\tNo Records Exists!\n");
+            printf("\n\t\t\tNo Records Exists!...");
             return 1;
         }
     while(fread(&c,sizeof(c),1,fp) == 1 )
@@ -208,7 +208,7 @@ int update()
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        printf("\n\t\t\tNo Records Exists!");
+        printf("\n\t\t\tNo Records Exists!...");
         return 1;
     }
     rewind(fp);
@@ -267,7 +267,7 @@ int delete()
 
     fp = fopen("file.txt","rb+");
     if(fp == NULL){
-        printf("\n\t\t\tNo Records Exists!");
+        printf("\n\t\t\tNo Records Exists!...");
         return 1;
     }
     ft = fopen("temp.txt","wb+");
