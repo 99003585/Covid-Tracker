@@ -3,15 +3,15 @@
 ## Hardware Requirements :
 
 * System: CPU - 2.0 GHZ 
-* RAM: 1 GB (Minimum)
+* RAM: 1 GB
 * Hard Disk: 40 GB
 
 ## Software Requirements :
 
 * Operating System: Any operating system (preferably linux,windows)
 * Language: C
-* IDE: Visual Studio Code
-* Compiler: MINGW Compiler
+* IDE: Visual Studio Code/Codeblocks
+* Compiler: GCC/MINGW Compiler
 
 ## Functional Requirements :
 
