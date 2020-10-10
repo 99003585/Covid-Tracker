@@ -16,7 +16,7 @@
 ## Functional Requirements :
 
 * Add new record: The user inputs the information such as the state name, active, recovered, deceased & other cases. Other cases include the migrated cases or non-COVID deaths.
-* Display record: All existing records are displayed along with state name, active, recovered, deceased & other cases. The total no of confirmed cases are also calculated and displayed.
+* Display record: All existing records are displayed along with state name, active, recovered, deceased & other cases.
 * Search record: State name is given as input to retrieve records of the respective state.
 * Update record: This function is used to modify the existing records with latest updates of number of cases.
 * Delete record: This function is used to delete the existing record by entering the name of state.
